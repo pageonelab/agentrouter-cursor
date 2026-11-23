@@ -15,6 +15,8 @@ Try a free preview:
 
 > Use AgentRouter to find a Google search tool for US desktop results. Show its current price and required inputs. Stop before spending.
 
+You can also inspect the inputs and pricing for this example on the [Google organic search tool page](https://www.agentrouter.to/tools/dataforseo.serp_google_organic?utm_source=cursor&utm_medium=plugin).
+
 To run the search, give Cursor your keyword and a maximum spend. Ask for the source links, run ID and final charge. [AgentRouter MCP guide](https://docs.agentrouter.to/integrations/mcp?utm_source=cursor&utm_medium=plugin)
 
 ## License
