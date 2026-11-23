@@ -1,0 +1,24 @@
+{
+  "name": "agentrouter",
+  "description": "Find and run paid provider tools (web and news search, page content, X/Reddit/LinkedIn/YouTube data, SEO data, company and people lookup, email finding) from one AgentRouter wallet. Connects the hosted AgentRouter MCP server with OAuth and adds the AgentRouter skill.",
+  "version": "1.1.3",
+  "author": {
+    "name": "AgentRouter"
+  },
+  "homepage": "https://docs.agentrouter.to/integrations/plugin",
+  "license": "MIT",
+  "keywords": [
+    "agentrouter",
+    "mcp",
+    "search",
+    "scraping",
+    "social",
+    "seo",
+    "enrichment",
+    "data"
+  ],
+  "logo": "assets/icon.svg",
+  "displayName": "AgentRouter",
+  "repository": "https://github.com/pageonelab/agentrouter-cursor",
+  "mcpServers": "mcp.json"
+}
