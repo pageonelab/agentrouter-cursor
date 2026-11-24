@@ -3,7 +3,7 @@ name: agentrouter
 description: Use AgentRouter in Cursor to discover provider tools, quote their price, run an approved search or data task, and report the results and wallet charges.
 license: MIT
 metadata:
-  version: "1.1.3"
+  version: "1.1.4"
 ---
 
 # AgentRouter for Cursor
@@ -21,7 +21,7 @@ Use the AgentRouter MCP connection bundled with this plugin. If it needs authent
 
 - **find** with a short task phrase. `match: none` means nothing fits; `exact`/`partial` tell you how well a tool matched. Choose the tool yourself from fit, required inputs, price and health. Do not stop to make the user pick a provider unless they asked to choose or every option exceeds what they authorized.
 - **describe** before the first invoke of a tool and whenever `tool_version` or the price changes. Check what its filters apply to and which requested facts its output can establish. For example, a person's location and their employer's headquarters answer different questions. If a tool covers only part of the request, search the catalog for the missing capability. Reuse the contract for the rest of the task.
-- **invoke** with `pricing_version` from describe, `input` that matches `input_schema`, `max_cost_usd` within the user's authorization, one `session_id` per task, and an `idempotency_key` you reuse if you retry the same call.
+- **invoke** with `pricing_version` from describe, `input` that matches `input_schema`, one `session_id` per task, and an `idempotency_key` you reuse if you retry the same call.
 - Fill parameters you can infer. Ask the user only for information you cannot infer, for spending beyond what they authorized, or before actions that write to the outside world.
 - Use the limits the schema allows; do not default to arbitrary small numbers. Each next page is a new, separately billed call — fetch only the pages the task needs.
 
@@ -30,7 +30,7 @@ Catalog browsing has two levels: groups such as Social/GTM, and categories such 
 ## Money
 
 - Amounts are USD decimal strings. Do not round or convert them.
-- `max_cost_usd` caps one call; the user's budgets cap more. A run `BLOCKED` with `MAX_COST_EXCEEDED`, `BUDGET_EXCEEDED` or `INSUFFICIENT_BALANCE` did not execute: explain and ask. You may create a top-up link (`create_topup` / `agentrouter topup`); a link is not a payment.
+- Send `max_cost_usd` only when the user sets a per-call limit. Otherwise omit it. The quoted amount is an estimate and actual usage can cost more. The user's configured budgets still apply. A run `BLOCKED` with `MAX_COST_EXCEEDED`, `BUDGET_EXCEEDED` or `INSUFFICIENT_BALANCE` did not execute: explain and ask. You may create a top-up link (`create_topup` / `agentrouter topup`); a link is not a payment.
 - `PRICING_CHANGED` means the price moved after describe and nothing ran. Describe again and continue only within the user's authorization.
 - Provider and platform errors are not charged. Empty results follow the tool's rule (`pricing.rules.empty_result`). Free promotions still have quotas.
 - `billing.charge_is_new: false` on a replay means no additional charge.
