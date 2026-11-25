@@ -1,7 +1,7 @@
 {
   "name": "agentrouter",
-  "description": "Find and run paid provider tools (web and news search, page content, X/Reddit/LinkedIn/YouTube data, SEO data, company and people lookup, email finding) from one AgentRouter wallet. Connects the hosted AgentRouter MCP server with OAuth and adds the AgentRouter skill.",
-  "version": "1.1.4",
+  "description": "Connect to AgentRouter to research competitors, verify job openings, trace growth channels, and analyze short videos. Check provider prices and run approved calls from one wallet.",
+  "version": "1.2.0",
   "author": {
     "name": "AgentRouter"
   },
