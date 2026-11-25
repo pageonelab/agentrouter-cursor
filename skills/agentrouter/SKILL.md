@@ -3,12 +3,12 @@ name: agentrouter
 description: Use AgentRouter in Cursor to discover provider tools, quote their price, run an approved search or data task, and report the results and wallet charges.
 license: MIT
 metadata:
-  version: "1.1.4"
+  version: "1.2.0"
 ---
 
 # AgentRouter for Cursor
 
-Use the AgentRouter MCP connection bundled with this plugin. If it needs authentication, ask the user to connect AgentRouter in Cursor and complete the browser sign-in. For a price preview, use only find and describe. Before spending, confirm the user's maximum total and keep every call within the remaining budget. An existing run can be retrieved without a new provider call.
+Use the AgentRouter MCP connection bundled with this plugin. If it needs authentication, ask the user to connect AgentRouter in Cursor and complete the browser sign-in. For a price preview, use only find and describe. For paid work, respect the user's authorization and any remaining budget. An existing run can be retrieved without a new provider call.
 
 ## Find, describe and invoke
 
