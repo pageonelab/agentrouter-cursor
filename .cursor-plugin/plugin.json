@@ -1,7 +1,7 @@
 {
   "name": "agentrouter",
   "description": "Connect to AgentRouter to research competitors, verify job openings, trace growth channels, and analyze short videos. Check provider prices and run approved calls from one wallet.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": {
     "name": "AgentRouter"
   },
