@@ -3,7 +3,7 @@ name: agentrouter
 description: Use AgentRouter in Cursor to discover provider tools, quote their price, run an approved search or data task, and report the results and wallet charges.
 license: MIT
 metadata:
-  version: "1.2.0"
+  version: "1.2.1"
 ---
 
 # AgentRouter for Cursor
@@ -30,7 +30,7 @@ Catalog browsing has two levels: groups such as Social/GTM, and categories such 
 ## Money
 
 - Amounts are USD decimal strings. Do not round or convert them.
-- Send `max_cost_usd` only when the user sets a per-call limit. Otherwise omit it. The quoted amount is an estimate and actual usage can cost more. The user's configured budgets still apply. A run `BLOCKED` with `MAX_COST_EXCEEDED`, `BUDGET_EXCEEDED` or `INSUFFICIENT_BALANCE` did not execute: explain and ask. You may create a top-up link (`create_topup` / `agentrouter topup`); a link is not a payment.
+- Send `max_cost_usd` only when the user sets a per-call limit. Otherwise omit it. The quoted amount is an estimate and actual usage can cost more. The user's configured budgets still apply. A run `BLOCKED` with `MAX_COST_EXCEEDED`, `BUDGET_EXCEEDED` or `INSUFFICIENT_BALANCE` did not execute: explain and ask. For `INSUFFICIENT_BALANCE`, show the user the Dashboard wallet URL from the receipt, or [Settings → Wallet](https://www.agentrouter.to/settings/wallet).
 - `PRICING_CHANGED` means the price moved after describe and nothing ran. Describe again and continue only within the user's authorization.
 - Provider and platform errors are not charged. Empty results follow the tool's rule (`pricing.rules.empty_result`). Free promotions still have quotas.
 - `billing.charge_is_new: false` on a replay means no additional charge.
